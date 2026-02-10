@@ -5,6 +5,7 @@ import Process from "./components/sections/Process"
 import WhyUs from "./components/sections/WhyUs"
 import Location from "./components/sections/Location"
 import Contact from "./components/sections/Contact"
+import Footer from "./components/layout/Footer"
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Location />
                 <Contact />
             </main>
+            <Footer />
         </div>
     )
 }
