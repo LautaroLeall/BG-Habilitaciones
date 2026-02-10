@@ -2,6 +2,7 @@ import Navbar from "./components/layout/Navbar"
 import Hero from "./components/sections/Hero"
 import Services from "./components/sections/Services"
 import Process from "./components/sections/Process"
+import WhyUs from "./components/sections/WhyUs"
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Hero />
                 <Services />
                 <Process />
+                <WhyUs />
             </main>
         </div>
     )
