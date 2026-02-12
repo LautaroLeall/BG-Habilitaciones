@@ -1,96 +1,87 @@
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion"
-import {
-    FileText,
-    Building2,
-    ClipboardCheck,
-    ShieldCheck,
-    FileSearch,
-    Headset
-} from "lucide-react"
+import { motion } from "framer-motion";
+import { FileText, Shield, BookOpen, Check, ChevronRight } from "lucide-react";
+import "../../styles/Services.css";
 
 const services = [
     {
-        icon: FileText,
         title: "Empadronamiento",
-        description: "TEM · THYS · PYP y documentación inicial del local."
+        description: "Inscribimos tu local para iniciar el trámite de habilitación municipal.",
+        icon: <FileText className="w-8 h-8" />
     },
     {
-        icon: Building2,
-        title: "Habilitación municipal",
-        description: "Gestión completa del trámite ante el municipio."
+        title: "Habilitación Municipal",
+        description: "Gestionamos la habilitación, requisito obligatorio para que tu local pueda vender legalmente.",
+        icon: <Shield className="w-8 h-8" />
     },
     {
-        icon: ClipboardCheck,
-        title: "Expediente técnico",
-        description: "Armado y presentación del expediente correspondiente."
+        title: "Libro de Actas",
+        description: "Realizamos la gestión y actualización del libro de actas conforme a la normativa vigente.",
+        icon: <BookOpen className="w-8 h-8" />
     },
     {
-        icon: FileSearch,
-        title: "DIM y Subdirección",
-        description: "Requisitos específicos según rubro y normativa."
-    },
-    {
-        icon: ShieldCheck,
-        title: "Inspecciones",
-        description: "Coordinación y acompañamiento hasta la aprobación."
-    },
-    {
-        icon: Headset,
-        title: "Asesoramiento permanente",
-        description: "Acompañamiento durante todo el proceso."
+        title: "Asesoramiento Permanente",
+        description: "Acompañamiento de principio a fin para que tengas tranquilidad y seguridad en todo el proceso.",
+        icon: <Check className="w-8 h-8" />
     }
-]
+];
 
-export default function Services() {
+const Services = () => {
     return (
-        <section id="servicios" className="py-24 bg-black">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="servicios" className="py-24 px-6 services-section">
+            <div className="container mx-auto">
 
-                {/* Título */}
+                {/* Encabezado de Sección */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-16 text-center"
+                    className="flex flex-col md:flex-row justify-between items-end mb-15"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        ¿Qué hacemos?
-                    </h2>
-                    <p className="mt-4 text-gray-400">
-                        Nos ocupamos de todo el proceso de habilitación de tu local.
-                    </p>
+                    <div>
+                        <span className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase block mb-4">Propuesta Integral</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white uppercase">Nuestros Servicios</h2>
+                    </div>
+                    <div className="mt-6 md:mt-0 text-right">
+                        <p className="text-gray-500 text-xs max-w-xs ml-auto uppercase">Soluciones divididas en 4 partes esenciales.</p>
+                    </div>
                 </motion.div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => {
-                        const Icon = service.icon
-                        return (
-                            <motion.div
-                                key={service.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="p-8 rounded-2xl bg-gray-900 border border-white/10 hover:border-white/20 transition"
-                            >
-                                <Icon className="mb-6 text-white" size={32} />
+                {/* Grilla de Servicios */}
+                <div className="grid md:grid-cols-2 gap-9">
+                    {services.map((service, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1, duration: 0.5 }}
+                            className="service-card p-8 lg:p-10 rounded-sm flex flex-col group cursor-default"
+                        >
+                            {/* Icono */}
+                            <div className="mb-8 w-fit p-4 rounded-sm service-icon-box">
+                                {service.icon}
+                            </div>
 
-                                <h3 className="text-xl font-semibold mb-3">
-                                    {service.title}
-                                </h3>
+                            <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
 
-                                <p className="text-gray-400 text-sm leading-relaxed">
-                                    {service.description}
-                                </p>
-                            </motion.div>
-                        )
-                    })}
+                            <p className="text-gray-400 text-base leading-relaxed mb-8">
+                                {service.description}
+                            </p>
+
+                            {/* Link "Más información" */}
+                            <div className="flex items-center gap-2 text-xs font-bold text-gray-600 group-hover:text-white transition-colors uppercase tracking-widest mt-auto border-t border-white/5 pt-6 cursor-pointer">
+                                <a href="https://wa.me/543813495974" target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                                    Más información <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </a>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-
             </div>
         </section>
-    )
-}
+    );
+};
+
+export default Services;
