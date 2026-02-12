@@ -1,85 +1,87 @@
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import "../../styles/Process.css";
 
+// Servicios 
 const steps = [
     {
-        number: "01",
-        title: "Análisis del local",
-        description: "Revisión inicial del rubro, ubicación y condiciones del local."
+        num: "01",
+        title: "Empadronamiento",
+        desc: "Inscripción del local en la Subdirección de Habilitación de Negocios."
     },
     {
-        number: "02",
-        title: "Documentación",
-        description: "Recolección y control de la documentación necesaria."
+        num: "02",
+        title: "Habilitación",
+        desc: "Se reúnen y presentan los requisitos necesarios para iniciar el trámite."
     },
     {
-        number: "03",
-        title: "Expediente técnico",
-        description: "Armado y presentación del expediente ante el municipio."
+        num: "03",
+        title: "Inspección",
+        desc: "Inspectores municipales verifican el cumplimiento de las condiciones del local."
     },
     {
-        number: "04",
-        title: "Inspecciones",
-        description: "Coordinación y acompañamiento durante las inspecciones."
+        num: "04",
+        title: "Resolución",
+        desc: "Aprobado el proceso, se emite y retira la habilitación municipal."
     },
     {
-        number: "05",
-        title: "Habilitación final",
-        description: "Aprobación final para que tu local funcione en regla."
+        num: "05",
+        title: "Libro de Actas",
+        desc: "Se gestiona la rubricación del nuevo libro conforme a la habilitación."
     }
-]
+];
 
-export default function Process() {
+const Process = () => {
     return (
-        <section id="proceso" className="py-24 bg-gray-950">
-            <div className="max-w-5xl mx-auto px-6">
+        <section id="proceso" className="py-24 px-6 relative overflow-hidden process-section">
 
-                {/* Título */}
+            {/* Línea decorativa superior */}
+            <div className="absolute top-0 right-0 w-full h-px process-divider-top"></div>
+
+            <div className="container mx-auto">
+
+                {/* Encabezado */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-16 text-center"
+                    className="mb-20 text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Cómo trabajamos
-                    </h2>
-                    <p className="mt-4 text-gray-400">
-                        Un proceso claro, ordenado y sin complicaciones.
-                    </p>
+                    <h2 className="text-3xl font-bold text-white mb-4 uppercase">Proceso de Trabajo</h2>
+                    <p className="text-gray-500 max-w-2sxl mx-auto text-sm uppercase">Ordenado, transparente y sin sorpresas.</p>
                 </motion.div>
 
-                {/* Timeline */}
-                <div className="relative border-l border-white/20 pl-8 space-y-12">
-                    {steps.map((step, index) => (
-                        <motion.div
-                            key={step.number}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative"
-                        >
-                            {/* Punto */}
-                            <span className="absolute -left-10 top-1 w-4 h-4 rounded-full bg-white" />
+                {/* Grilla de Pasos */}
+                <div className="grid md:grid-cols-5 gap-4 relative">
 
-                            <div className="space-y-2">
-                                <span className="text-sm text-gray-400">
-                                    {step.number}
-                                </span>
-                                <h3 className="text-xl font-semibold">
-                                    {step.title}
-                                </h3>
-                                <p className="text-gray-400 max-w-xl">
-                                    {step.description}
-                                </p>
+                    {/* Línea conectora (solo desktop) */}
+                    <div className="hidden md:block absolute top-10 left-0 w-full h-px process-connector-line"></div>
+
+                    {steps.map((step, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.15 }}
+                            className="process-card group relative z-10 pt-4 text-center md:text-left"
+                        >
+                            {/* Número del paso */}
+                            <div className="process-step-number w-12 h-12 flex items-center justify-center text-white font-bold mb-6 mx-auto md:mx-0 shadow-lg">
+                                {step.num}
                             </div>
+
+                            <h3 className="text-lg font-bold text-white mb-3 uppercase">{step.title}</h3>
+
+                            <p className="text-gray-500 text-m leading-relaxed group-hover:text-gray-300 transition-colors px-2 md:px-0">
+                                {step.desc}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
-
             </div>
         </section>
-    )
-}
+    );
+};
+
+export default Process;
