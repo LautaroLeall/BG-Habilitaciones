@@ -1,0 +1,30 @@
+.process-section {
+    background-color: var(--bg-primary);
+}
+
+/* Línea sutil arriba de la sección */
+.process-divider-top {
+    background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+}
+
+
+/* Línea que conecta los números (solo visible en desktop) */
+.process-connector-line {
+    background-color: #222;
+}
+
+/* Círculo/Cuadrado del número */
+.process-step-number {
+    background-color: var(--bg-tertiary);
+    border: 1px solid #333;
+    color: var(--text-main);
+    transition: all 0.5s ease;
+}
+
+/* Efecto Hover en la tarjeta completa */
+.process-card:hover .process-step-number {
+    background-color: var(--text-main);
+    color: var(--text-dark);
+    transform: scale(1.1);
+    border-color: var(--text-main);
+}
