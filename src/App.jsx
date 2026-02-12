@@ -2,23 +2,24 @@ import Navbar from "./components/layout/Navbar"
 import Hero from "./components/sections/Hero"
 import Services from "./components/sections/Services"
 import Process from "./components/sections/Process"
-import WhyUs from "./components/sections/WhyUs"
-import Location from "./components/sections/Location"
+import About from "./components/sections/About"
 import Contact from "./components/sections/Contact"
+import BtnWhatsapp from "./components/layout/BtnWhatsapp"
 import Footer from "./components/layout/Footer"
+import "./index.css"
 
 function App() {
     return (
-        <div className="bg-black text-white min-h-screen">
+        <div>
             <Navbar />
-            <main className="pt-24">
+            <main>
                 <Hero />
                 <Services />
                 <Process />
-                <WhyUs />
-                <Location />
+                <About />
                 <Contact />
             </main>
+            <BtnWhatsapp />
             <Footer />
         </div>
     )
