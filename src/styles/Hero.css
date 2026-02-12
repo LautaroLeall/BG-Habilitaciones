@@ -1,0 +1,73 @@
+/* SECCIÓN PRINCIPAL */
+.hero-section {
+    background-color: var(--bg-primary);
+}
+
+/* Degradado radial sutil */
+.hero-bg-gradient {
+    background: radial-gradient(circle at top right, #1a1a1a, var(--bg-primary));
+    opacity: 0.8;
+}
+
+/* TAG DE UBICACIÓN */
+.hero-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.shadow-red {
+    box-shadow: 0 0 8px rgba(99, 239, 68, 0.8);
+}
+
+/* TIPOGRAFÍA */
+/* Texto degradado metálico */
+.text-gradient {
+    background: linear-gradient(to right, #e5e5e5, #4b5563);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+}
+
+/* BOTONES */
+.btn-primary {
+    background-color: var(--text-main);
+    color: var(--text-dark);
+    border: none;
+    box-shadow: var(--glow-subtle);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e5e5e5;
+    box-shadow: var(--glow-strong);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* EFECTOS VISUALES */
+/* Resplandor detrás del logo */
+.hero-glow {
+    width: 20rem;
+    height: 20rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    filter: blur(100px);
+    z-index: 0;
+}
