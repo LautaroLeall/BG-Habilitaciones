@@ -1,53 +1,81 @@
-import { Instagram, Phone, Mail } from "lucide-react"
+import { Mail, Instagram, Github, Linkedin } from "lucide-react";
+import "../../styles/Footer.css"; 
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="bg-black border-t border-gray-800">
-            <div className="max-w-6xl mx-auto px-6 py-10">
+        <footer className="footer">
+            <div className="container mx-auto">
 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* --- SECCIÓN SUPERIOR: MARCA + REDES --- */}
+                <div className="footer-content">
 
-                    {/* Marca */}
-                    <div className="text-center md:text-left space-y-1">
-                        <h3 className="font-bold text-lg">GYC Habilitaciones</h3>
-                        <p className="text-sm text-gray-500">
-                            Habilitaciones municipales · Tucumán
+                    {/* IZQUIERDA: LOGO + COPYRIGHT */}
+                    <div className="footer-brand">
+                        <div className="footer-logo-text">
+                            <span className="font-bold text-white">BG</span>
+                            <span className="text-gray-500 font-light">GESTIÓN</span>
+                        </div>
+                        <span className="divider hidden sm:block">|</span>
+                        <p className="copyright">
+                            © {currentYear} Todos los derechos reservados.
                         </p>
                     </div>
 
-                    {/* Contacto */}
-                    <div className="flex gap-6 text-gray-400">
-                        <a
-                            href="https://wa.me/543813495974"
-                            target="_blank"
-                            className="hover:text-white transition"
-                        >
-                            <Phone size={20} />
-                        </a>
-
+                    {/* DERECHA: REDES SOCIALES (Benjamín) */}
+                    <div className="footer-links">
                         <a
                             href="mailto:gychabilitaciones@gmail.com"
-                            className="hover:text-white transition"
+                            className="footer-link-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <Mail size={20} />
+                            <Mail size={16} />
+                            <span>Email</span>
                         </a>
 
                         <a
-                            href="https://instagram.com/_benjaagonzalez_"
+                            href="https://www.instagram.com/bg.habilitaciones"
                             target="_blank"
-                            className="hover:text-white transition"
+                            rel="noopener noreferrer"
+                            className="footer-link-item"
                         >
-                            <Instagram size={20} />
+                            <Instagram size={16} />
+                            <span>Instagram</span>
                         </a>
                     </div>
+
                 </div>
 
-                {/* Línea final */}
-                <div className="mt-8 text-center text-xs text-gray-600">
-                    © {new Date().getFullYear()} GYC Habilitaciones. Todos los derechos reservados.
-                </div>
+                {/* --- SECCIÓN INFERIOR: DESARROLLADOR --- */}
+                <div className="footer-dev-section">
 
+                    {/* Redes del Desarrollador */}
+                    <div className="dev-socials">
+                        <a href="https://github.com/LautaroLeall" target="_blank" rel="noreferrer" className="dev-icon">
+                            <Github size={14} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/lauldp/" target="_blank" rel="noreferrer" className="dev-icon">
+                            <Linkedin size={14} />
+                        </a>
+                    </div>
+
+                    {/* Crédito */}
+                    <div className="dev-credit">
+                        <span className="text-gray-600">Desarrollado por</span>
+                        <a
+                            href="https://wa.me/5493813399463"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="dev-name"
+                        >
+                            Lautaro Leal
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </footer>
-    )
+    );
 }
