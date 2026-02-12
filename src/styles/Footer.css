@@ -1,0 +1,159 @@
+/* --- VARIABLES LOCALES --- */
+:root {
+    --footer-bg: #020202; /* Negro casi puro */
+    --footer-border: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-muted: #6b7280; /* Gray 500 */
+    --accent-hover: #ffffff;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--footer-border);
+    padding: 3rem 1.5rem 1.5rem 1.5rem; /* pt-12 pb-6 px-6 */
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- SECCIÓN SUPERIOR --- */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--footer-border);
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        gap: 0;
+    }
+}
+
+/* Marca y Copyright */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .footer-brand {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+.footer-logo-text {
+    display: flex;
+    gap: 0.25rem;
+    letter-spacing: 0.1em;
+}
+
+.divider {
+    color: var(--footer-border);
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.75rem; /* text-xs */
+    margin: 0;
+}
+
+/* Enlaces Redes (Derecha) */
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem; /* text-sm */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link-item:hover {
+    color: var(--text-main);
+}
+
+/* --- SECCIÓN DEVELOPER (Inferior) --- */
+.footer-dev-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .footer-dev-section {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+/* Redes Dev */
+.dev-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.dev-icon {
+    color: #4b5563; /* Gray 600 */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dev-icon:hover {
+    color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+/* Texto Crédito */
+.dev-credit {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem; /* text-xs */
+    color: var(--text-muted);
+}
+
+.dev-name {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.dev-name:hover {
+    color: var(--text-main);
+}
+
+/* Pequeña línea animada bajo el nombre del dev al hover */
+.dev-name::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--text-main);
+    transition: width 0.3s ease;
+}
+
+.dev-name:hover::after {
+    width: 100%;
+}
