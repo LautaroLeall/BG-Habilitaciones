@@ -1,0 +1,42 @@
+/* SECCIÓN */
+.about-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+}
+
+/* MARCO DE IMAGEN */
+.about-image-frame {
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-light);
+    transform: rotate(2deg);
+    transition: transform 0.5s ease, border-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.about-image-frame:hover {
+    transform: rotate(0deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Filtro de la imagen */
+.about-img {
+    filter: grayscale(100%) contrast(1.25);
+    transition: filter 0.5s ease;
+}
+
+.about-image-frame:hover .about-img {
+    filter: grayscale(20%) contrast(1.1);
+}
+
+/* Luz de fondo detrás de la imagen */
+.about-glow-bg {
+    background: linear-gradient(to right, #374151, #000000);
+    opacity: 0.2;
+    filter: blur(20px);
+}
+
+/* LISTA DE RAZONES */
+.reason-list {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-light);
+}
