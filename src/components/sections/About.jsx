@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { User, Clock, Phone, FileCheck, Shield } from "lucide-react";
 import "../../styles/About.css";
 
-const profileImage = "benjamin-gonzalez.png";
+const profileImage = "about.png";
 
 const reasons = [
     {
