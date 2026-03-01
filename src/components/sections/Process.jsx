@@ -48,7 +48,7 @@ const Process = () => {
                     className="mb-20 text-center"
                 >
                     <h2 className="text-3xl font-bold text-white mb-4 uppercase">Proceso de Trabajo</h2>
-                    <p className="text-gray-500 max-w-2sxl mx-auto text-sm uppercase">Ordenado, transparente y sin sorpresas.</p>
+                    <p className="text-gray-500 max-w-2sxl mx-auto text-sm uppercase">Ordenado, Transparente y Seguro.</p>
                 </motion.div>
 
                 {/* Grilla de Pasos */}
