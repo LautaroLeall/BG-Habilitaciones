@@ -18,16 +18,6 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Filtro de la imagen */
-.about-img {
-    filter: grayscale(100%) contrast(1.25);
-    transition: filter 0.5s ease;
-}
-
-.about-image-frame:hover .about-img {
-    filter: grayscale(20%) contrast(1.1);
-}
-
 /* Luz de fondo detrás de la imagen */
 .about-glow-bg {
     background: linear-gradient(to right, #374151, #000000);
