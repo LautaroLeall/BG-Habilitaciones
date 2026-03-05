@@ -25,9 +25,26 @@ const services = [
         icon: <Check className="w-8 h-8" />
     },
     {
-        title: "Control Mensual de Impuestos Municipales",
-        description:
-            "Nos encargamos del control mensual de los impuestos municipales de tu comercio para que evites multas, recargos o intimaciones. Incluye seguimiento de TEM, CISI y P&P, además de regularizaciones y gestión de planes de pago si existen deudas.",
+        title: "Control de Impuestos Municipales",
+        description: (
+            <>
+                <p className="text-gray-400 mb-4">
+                    Realizamos control mensual de impuestos municipales de tu comercio para que evites multas, recargos o intimaciones.
+                    <br />
+                    Incluye seguimiento de los siguientes impuestos:
+                </p>
+
+                <ul className="text-gray-300 text-sm space-y-2 mb-4 pl-4 list-disc">
+                    <li>TEM (Tributo Económico Municipal)</li>
+                    <li>CISI</li>
+                    <li>P&P (Publicidad y Propaganda)</li>
+                </ul>
+
+                <p className="text-gray-400">
+                    Regularizamos deudas y gestionamos planes de pago en caso de ser necesario.
+                </p>
+            </>
+        ),
         icon: <Landmark className="w-8 h-8" />
     }
 ];
@@ -85,9 +102,9 @@ const Services = () => {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-base leading-relaxed mb-8">
+                                <div className="text-gray-400 text-base leading-relaxed mb-8">
                                     {service.description}
-                                </p>
+                                </div>
 
                                 <div className="flex items-center gap-2 text-xs font-bold text-gray-600 group-hover:text-white transition-colors uppercase tracking-widest mt-auto border-t border-white/5 pt-6">
                                     <a
