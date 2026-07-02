@@ -1,5 +1,5 @@
 import { Mail, Instagram, Github, Linkedin } from "lucide-react";
-import "../../styles/Footer.css"; 
+import "../../styles/Footer.css";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ export default function Footer() {
                     <div className="footer-brand">
                         <div className="footer-logo-text">
                             <span className="font-bold text-white">BG</span>
-                            <span className="text-gray-500 font-light">GESTIÓN</span>
+                            <span className="text-gray-400 font-light">GESTIÓN</span>
                         </div>
                         <span className="divider hidden sm:block">|</span>
                         <p className="copyright">
@@ -53,17 +53,17 @@ export default function Footer() {
 
                     {/* Redes del Desarrollador */}
                     <div className="dev-socials">
-                        <a href="https://github.com/LautaroLeall" target="_blank" rel="noreferrer" className="dev-icon">
+                        <a href="https://github.com/LautaroLeall" target="_blank" rel="noopener noreferrer" className="dev-icon" aria-label="GitHub del desarrollador Lautaro Leal">
                             <Github size={14} />
                         </a>
-                        <a href="https://www.linkedin.com/in/lauldp/" target="_blank" rel="noreferrer" className="dev-icon">
+                        <a href="https://www.linkedin.com/in/lauldp/" target="_blank" rel="noopener noreferrer" className="dev-icon" aria-label="LinkedIn del desarrollador Lautaro Leal">
                             <Linkedin size={14} />
                         </a>
                     </div>
 
                     {/* Crédito */}
                     <div className="dev-credit">
-                        <span className="text-gray-600">Desarrollado por</span>
+                        <span className="text-gray-400">Desarrollado por</span>
                         <a
                             href="https://wa.me/5493813399463"
                             target="_blank"

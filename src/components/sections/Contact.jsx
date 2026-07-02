@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Phone, Mail, Instagram, User, Linkedin, MapPin } from "lucide-react";
 import "../../styles/Contact.css";
@@ -33,6 +32,7 @@ const Contact = () => {
                             whileTap={{ scale: 0.95 }}
                             href="https://wa.me/543813495974"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-contact-primary px-10 py-5 font-bold flex items-center justify-center gap-3 text-sm tracking-widest uppercase cursor-pointer no-underline"
                         >
                             <Phone size={18} /> HABLEMOS AHORA
@@ -42,6 +42,7 @@ const Contact = () => {
                             whileTap={{ scale: 0.95 }}
                             href="mailto:gychabilitaciones@gmail.com"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-contact-secondary px-10 py-5 font-bold flex items-center justify-center gap-3 text-sm tracking-widest uppercase cursor-pointer no-underline"
                         >
                             <Mail size={18} /> DEJA TU MENSAJE
@@ -69,21 +70,21 @@ const Contact = () => {
                             <a
                                 href="https://www.instagram.com/_joven_emprendedor?igsh=aXhyem9kMXBxMm5h"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-white transition-colors w-fit">
                                 <User size={18} /> @_joven_emprendedor
                             </a>
                             <a
                                 href="https://www.instagram.com/bg.habilitaciones?igsh=MTYzNGhlMjdwam56MA=="
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-white transition-colors w-fit">
                                 <Instagram size={18} /> @bg.habilitaciones
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/benjamingonzalez-?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-2 hover:text-white transition-colors w-fit">
                                 <Linkedin size={18} /> Benjamín Gonzalez
                             </a>

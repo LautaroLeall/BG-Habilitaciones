@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import "../../styles/Process.css";
 
@@ -48,7 +47,7 @@ const Process = () => {
                     className="mb-20 text-center"
                 >
                     <h2 className="text-3xl font-bold text-white mb-4 uppercase">Proceso de Trabajo</h2>
-                    <p className="text-gray-500 max-w-2sxl mx-auto text-sm uppercase">Ordenado, Transparente y Seguro.</p>
+                    <p className="text-gray-400 max-w-2sxl mx-auto text-sm uppercase">Ordenado, Transparente y Seguro.</p>
                 </motion.div>
 
                 {/* Grilla de Pasos */}
@@ -73,7 +72,7 @@ const Process = () => {
 
                             <h3 className="text-lg font-bold text-white mb-3 uppercase">{step.title}</h3>
 
-                            <p className="text-gray-500 text-m leading-relaxed group-hover:text-gray-300 transition-colors px-2 md:px-0">
+                            <p className="text-gray-400 text-m leading-relaxed group-hover:text-gray-300 transition-colors px-2 md:px-0">
                                 {step.desc}
                             </p>
                         </motion.div>

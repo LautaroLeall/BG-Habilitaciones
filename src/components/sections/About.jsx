@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { User, Clock, Phone, FileCheck, Shield } from "lucide-react";
 import "../../styles/About.css";
@@ -67,7 +66,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase block mb-4">¿Quién Soy?</span>
+                    <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-4">¿Quién Soy?</span>
 
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight uppercase">
                         Gestor Especializado en Habilitación Municipal.
@@ -85,7 +84,7 @@ const About = () => {
 
                     {/* Lista de Razones */}
                     <div className="mt-10 p-8 rounded-sm reason-list">
-                        <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest border-b border-white/10 pb-4">Por qué elegir este servicio</h4>
+                        <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest border-b border-white/10 pb-4">Por qué elegir este servicio</h3>
 
                         <ul className="grid gap-4">
                             {reasons.map((reason, idx) => (
