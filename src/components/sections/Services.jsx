@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FileText, Shield, BookOpen, Check, ChevronRight, Landmark } from "lucide-react";
 import "../../styles/Services.css";
@@ -65,7 +64,7 @@ const Services = () => {
                     className="flex flex-col md:flex-row justify-between items-end mb-15"
                 >
                     <div>
-                        <span className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase block mb-4">
+                        <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-4">
                             Propuesta Integral
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white uppercase">
@@ -73,7 +72,7 @@ const Services = () => {
                         </h2>
                     </div>
                     <div className="mt-6 md:mt-0 text-right">
-                        <p className="text-gray-500 text-xs max-w-xs ml-auto uppercase">
+                        <p className="text-gray-400 text-xs max-w-xs ml-auto uppercase">
                             Soluciones divididas en partes esenciales.
                         </p>
                     </div>
@@ -106,11 +105,11 @@ const Services = () => {
                                     {service.description}
                                 </div>
 
-                                <div className="flex items-center gap-2 text-xs font-bold text-gray-600 group-hover:text-white transition-colors uppercase tracking-widest mt-auto border-t border-white/5 pt-6">
+                                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 group-hover:text-white transition-colors uppercase tracking-widest mt-auto border-t border-white/5 pt-6">
                                     <a
                                         href="https://wa.me/543813495974"
                                         target="_blank"
-                                        rel="noreferrer"
+                                        rel="noopener noreferrer"
                                         className="flex items-center gap-2"
                                     >
                                         Más información
