@@ -78,10 +78,9 @@ const About = () => {
                             Con experiencia en trámites y normativa vigente, acompaño a contribuyentes y comerciantes para que puedan abrir su negocio de forma <strong className="text-white">legal, rápida y sin complicaciones</strong>.
                         </p>
                         <p>
-                            Mi trabajo se respalda con una formación universitaria en la <strong className="text-white">Licenciatura en Comercio Internacional</strong>, actualmente cursando el último año de la carrera.
+                            Mi trabajo se respalda con una formación universitaria en <strong className="text-white">Comercio Internacional</strong>, contando actualmente con el título de Técnico en Comercio Internacional.
                         </p>
                     </div>
-
                     {/* Lista de Razones */}
                     <div className="mt-10 p-8 rounded-sm reason-list">
                         <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest border-b border-white/10 pb-4">Por qué elegir este servicio</h3>
