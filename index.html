@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/logo-sinfondo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/logo-sinfondo.png" type="image/png">
   <link rel="apple-touch-icon" href="/logo-sinfondo-negro.png" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,10 +18,11 @@
     content="Habilitaciones Municipales, Gestoría, San Miguel de Tucumán, Yerba Buena, Benjamín Gonzalez Araoz, Trámites Comerciales, Habilitación de Negocios" />
   <meta name="author" content="Benjamín Gonzalez Araoz" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#1a1a1a" />
+  <meta name="theme-color" content="#050505" />
 
   <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
   <meta property="og:title" content="BG Habilitaciones | Benjamín Gonzalez Araoz" />
   <meta property="og:description"
     content="Gestor Especializado en Habilitación Municipal en San Miguel de Tucumán y Yerba Buena. Evitá multas y clausuras." />
@@ -36,11 +37,49 @@
     content="Gestor Especializado en Habilitación Municipal en San Miguel de Tucumán y Yerba Buena. Evitá multas y clausuras." />
   <meta name="twitter:image" content="https://bga-habilitaciones.netlify.app/logo-sinfondo-negro.png" />
 
-  <link href="./src/index.css" rel="stylesheet">
+  <!-- Fuentes (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Titulo de Pestaña -->
   <title>BG.HABILITACIONES | Benjamín Gonzalez Araoz</title>
 
+  <!-- Structured Data (JSON-LD Local SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "BG Habilitaciones - Benjamín González Araoz",
+      "description": "Gestor Especializado en Habilitación Municipal en San Miguel de Tucumán y Yerba Buena. Trámite obligatorio para evitar multas, sanciones y clausuras.",
+      "url": "https://bga-habilitaciones.netlify.app/",
+      "logo": "https://bga-habilitaciones.netlify.app/logo-sinfondo-negro.png",
+      "image": "https://bga-habilitaciones.netlify.app/about.png",
+      "telephone": "+5493813495974",
+      "email": "gychabilitaciones@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Miguel de Tucumán",
+        "addressRegion": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "San Miguel de Tucumán"
+        },
+        {
+          "@type": "City",
+          "name": "Yerba Buena"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/bg.habilitaciones",
+        "https://www.instagram.com/_joven_emprendedor",
+        "https://www.linkedin.com/in/benjamingonzalez-"
+      ]
+    }
+  </script>
 </head>
 
 <body>
