@@ -6,7 +6,6 @@ import About from "./components/sections/About"
 import Contact from "./components/sections/Contact"
 import BtnWhatsapp from "./components/layout/BtnWhatsapp"
 import Footer from "./components/layout/Footer"
-import "./index.css"
 
 function App() {
     return (
