@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { User, Clock, Phone, FileCheck, Shield } from "lucide-react";
 import "../../styles/About.css";
 
-const profileImage = "about.png";
+const profileImage = "/about.png";
 
 const reasons = [
     {
@@ -48,8 +48,10 @@ const About = () => {
 
                         <img
                             src={profileImage}
-                            alt="Benjamin Gonzalez Araoz"
-                            className="w-full h-auto about-img"
+                            alt="Benjamín González Araoz - Gestor Municipal"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto"
                         />
                     </div>
 
@@ -86,8 +88,8 @@ const About = () => {
                         <h3 className="text-white font-bold mb-6 text-sm uppercase tracking-widest border-b border-white/10 pb-4">Por qué elegir este servicio</h3>
 
                         <ul className="grid gap-4">
-                            {reasons.map((reason, idx) => (
-                                <li key={idx} className="flex items-center gap-3 text-gray-400 text-sm">
+                            {reasons.map((reason) => (
+                                <li key={reason.text} className="flex items-center gap-3 text-gray-400 text-sm">
                                     <div className="text-white">{reason.icon}</div>
                                     {reason.text}
                                 </li>
