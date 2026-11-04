@@ -45,6 +45,10 @@
     color: var(--text-main);
 }
 
+.logo-box img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
 /* Estilo para cuando no hay imagen */
 .logo-box.fallback {
     font-weight: bold;
@@ -55,6 +59,11 @@
 .logo-container:hover .logo-box {
     background-color: var(--text-main);
     color: var(--text-dark);
+    border-color: var(--text-main);
+}
+
+.logo-container:hover .logo-box img {
+    filter: invert(1);
 }
 
 /* Texto al lado del logo */

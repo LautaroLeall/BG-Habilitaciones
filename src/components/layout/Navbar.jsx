@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { NAV_ITEMS } from "../../constants/siteData";
 import "../../styles/Navbar.css";
 
-const logoImage = "sin-fondo.png";
+const logoImage = "/logo-sinfondo.png";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,22 +15,21 @@ const Navbar = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
 
-            const sections = ["inicio", "servicios", "proceso", "nosotros", "contacto"];
-            const current = sections.find((section) => {
-                const element = document.getElementById(section);
+            const current = NAV_ITEMS.find(({ id }) => {
+                const element = document.getElementById(id);
                 if (!element) return false;
                 const rect = element.getBoundingClientRect();
                 return rect.top >= -100 && rect.top <= 300;
             });
 
-            if (current) setActiveSection(current);
+            if (current) setActiveSection(current.id);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
     return (
         <>
@@ -48,12 +48,14 @@ const Navbar = () => {
                         <div className="logo-box flex items-center justify-center overflow-hidden">
                             <img
                                 src={logoImage}
-                                alt="BG"
+                                alt="Logo BG Habilitaciones"
+                                width={32}
+                                height={32}
                                 className="w-full h-full object-contain"
                                 onError={(e) => {
-                                    e.target.style.display = 'none';
-                                    e.target.parentElement.classList.add('fallback');
-                                    e.target.parentElement.innerText = 'BG';
+                                    e.target.style.display = "none";
+                                    e.target.parentElement.classList.add("fallback");
+                                    e.target.parentElement.innerText = "BG";
                                 }}
                             />
                         </div>
@@ -64,21 +66,27 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center gap-10 text-xs font-bold tracking-widest uppercase">
-                        {["Inicio", "Servicios", "Proceso", "Nosotros", "Contacto"].map((item) => (
+                        {NAV_ITEMS.map(({ label, id }) => (
                             <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className={`nav-link py-1 ${activeSection === item.toLowerCase() ? "active" : ""}`}
+                                key={id}
+                                href={`#${id}`}
+                                className={`nav-link py-1 ${activeSection === id ? "active" : ""}`}
                             >
-                                {item}
-                                {activeSection === item.toLowerCase() && (
+                                {label}
+                                {activeSection === id && (
                                     <motion.div layoutId="underline" className="absolute bottom-0 left-0 w-full nav-underline" />
                                 )}
                             </a>
                         ))}
                     </div>
 
-                    <button className="md:hidden menu-btn" onClick={toggleMenu}>
+                    <button
+                        type="button"
+                        className="md:hidden menu-btn"
+                        onClick={toggleMenu}
+                        aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+                        aria-expanded={isMenuOpen}
+                    >
                         {isMenuOpen ? <X /> : <Menu />}
                     </button>
                 </div>
@@ -93,17 +101,17 @@ const Navbar = () => {
                         transition={{ type: "tween" }}
                         className="fixed inset-0 z-40 mobile-menu flex flex-col items-center justify-center gap-8"
                     >
-                        {["Inicio", "Servicios", "Proceso", "Nosotros", "Contacto"].map((item, i) => (
+                        {NAV_ITEMS.map(({ label, id }, i) => (
                             <motion.a
-                                key={item}
+                                key={id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                href={`#${item.toLowerCase()}`}
+                                href={`#${id}`}
                                 className="text-2xl font-light tracking-widest mobile-link"
                                 onClick={toggleMenu}
                             >
-                                {item.toUpperCase()}
+                                {label.toUpperCase()}
                             </motion.a>
                         ))}
                     </motion.div>

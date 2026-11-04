@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FileText, Shield, BookOpen, Check, ChevronRight, Landmark } from "lucide-react";
+import { CONTACT_INFO } from "../../constants/siteData";
 import "../../styles/Services.css";
 
 const services = [
@@ -85,7 +86,7 @@ const Services = () => {
 
                         return (
                             <motion.div
-                                key={idx}
+                                key={service.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -107,9 +108,10 @@ const Services = () => {
 
                                 <div className="flex items-center gap-2 text-xs font-bold text-gray-400 group-hover:text-white transition-colors uppercase tracking-widest mt-auto border-t border-white/5 pt-6">
                                     <a
-                                        href="https://wa.me/543813495974"
+                                        href={CONTACT_INFO.whatsappUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={`Más información sobre ${service.title}`}
                                         className="flex items-center gap-2"
                                     >
                                         Más información

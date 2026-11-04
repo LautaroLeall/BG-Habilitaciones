@@ -26,6 +26,6 @@
 
 /* Efecto hover en el icono cuando pasas el mouse por la tarjeta */
 .service-card:hover .service-icon-box {
-    color: var(--text-white);
+    color: var(--text-main);
     background: rgba(255, 255, 255, 0.1);
 }

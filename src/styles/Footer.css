@@ -1,18 +1,16 @@
-/* --- VARIABLES LOCALES --- */
-:root {
-    --footer-bg: #020202; /* Negro casi puro */
-    --footer-border: rgba(255, 255, 255, 0.05);
-    --text-main: #ffffff;
-    --text-muted: #6b7280; /* Gray 500 */
-    --accent-hover: #ffffff;
-}
-
 /* --- CONTENEDOR PRINCIPAL --- */
 .footer {
+    --footer-bg: #020202;
+    /* Negro casi puro */
+    --footer-border: rgba(255, 255, 255, 0.05);
+    --footer-muted: #9ca3af;
+    /* Gray 400 para contraste accesible */
+
     background-color: var(--footer-bg);
     border-top: 1px solid var(--footer-border);
-    padding: 3rem 1.5rem 1.5rem 1.5rem; /* pt-12 pb-6 px-6 */
-    font-family: 'Inter', sans-serif;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    /* pt-12 pb-6 px-6 */
+    font-family: var(--font-family);
 }
 
 /* --- SECCIÓN SUPERIOR --- */
@@ -61,8 +59,9 @@
 }
 
 .copyright {
-    color: var(--text-muted);
-    font-size: 0.75rem; /* text-xs */
+    color: var(--footer-muted);
+    font-size: 0.75rem;
+    /* text-xs */
     margin: 0;
 }
 
@@ -76,8 +75,9 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem; /* text-sm */
+    color: var(--footer-muted);
+    font-size: 0.875rem;
+    /* text-sm */
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -110,7 +110,7 @@
 }
 
 .dev-icon {
-    color: #4b5563; /* Gray 600 */
+    color: var(--footer-muted);
     transition: color 0.3s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
@@ -126,12 +126,13 @@
     display: flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.75rem; /* text-xs */
-    color: var(--text-muted);
+    font-size: 0.75rem;
+    /* text-xs */
+    color: var(--footer-muted);
 }
 
 .dev-name {
-    color: var(--text-muted);
+    color: var(--footer-muted);
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease;

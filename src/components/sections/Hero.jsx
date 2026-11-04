@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { CONTACT_INFO } from "../../constants/siteData";
 import "../../styles/Hero.css";
 
-const logoImage = "logo-sinfondo.png";
+const logoImage = "/logo-sinfondo.png";
 
 const Hero = () => {
     return (
         <section id="inicio" className="pt-25 pb-20 px-6 min-h-screen flex items-center justify-center overflow-hidden hero-section">
 
             <div className="absolute inset-0 hero-bg-gradient z-0"></div>
-            <div className="absolute inset-0 hero-pattern z-0"></div>
 
             <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
@@ -60,8 +60,9 @@ const Hero = () => {
                         <motion.a
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            href="https://wa.me/+5493813495974"
+                            href={CONTACT_INFO.whatsappUrl}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-primary px-8 py-4 font-bold text-sm tracking-wider flex items-center justify-center gap-3 rounded-sm cursor-pointer no-underline"
                         >
                             EMPEZAR <ArrowRight className="w-4 h-4" />
@@ -94,9 +95,12 @@ const Hero = () => {
                     >
                         <img
                             src={logoImage}
-                            alt="Benjamin Gonzalez Logo"
+                            alt="Logo de Benjamín González - BG Habilitaciones"
+                            width={384}
+                            height={384}
+                            fetchPriority="high"
                             className="w-full h-full object-contain filter drop-shadow-2xl"
-                            onError={(e) => { e.target.style.display = 'none'; }}
+                            onError={(e) => { e.target.style.display = "none"; }}
                         />
                     </motion.div>
                 </motion.div>

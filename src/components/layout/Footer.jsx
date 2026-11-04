@@ -1,4 +1,5 @@
 import { Mail, Instagram, Github, Linkedin } from "lucide-react";
+import { CONTACT_INFO, DEVELOPER_INFO } from "../../constants/siteData";
 import "../../styles/Footer.css";
 
 export default function Footer() {
@@ -26,7 +27,7 @@ export default function Footer() {
                     {/* DERECHA: REDES SOCIALES (Benjamín) */}
                     <div className="footer-links">
                         <a
-                            href="mailto:gychabilitaciones@gmail.com"
+                            href={CONTACT_INFO.emailUrl}
                             className="footer-link-item"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -36,7 +37,7 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="https://www.instagram.com/bg.habilitaciones"
+                            href={CONTACT_INFO.instagramBusiness.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="footer-link-item"
@@ -53,10 +54,22 @@ export default function Footer() {
 
                     {/* Redes del Desarrollador */}
                     <div className="dev-socials">
-                        <a href="https://github.com/LautaroLeall" target="_blank" rel="noopener noreferrer" className="dev-icon" aria-label="GitHub del desarrollador Lautaro Leal">
+                        <a
+                            href={DEVELOPER_INFO.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="dev-icon"
+                            aria-label={`GitHub del desarrollador ${DEVELOPER_INFO.name}`}
+                        >
                             <Github size={14} />
                         </a>
-                        <a href="https://www.linkedin.com/in/lauldp/" target="_blank" rel="noopener noreferrer" className="dev-icon" aria-label="LinkedIn del desarrollador Lautaro Leal">
+                        <a
+                            href={DEVELOPER_INFO.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="dev-icon"
+                            aria-label={`LinkedIn del desarrollador ${DEVELOPER_INFO.name}`}
+                        >
                             <Linkedin size={14} />
                         </a>
                     </div>
@@ -65,12 +78,12 @@ export default function Footer() {
                     <div className="dev-credit">
                         <span className="text-gray-400">Desarrollado por</span>
                         <a
-                            href="https://wa.me/5493813399463"
+                            href={DEVELOPER_INFO.whatsappUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="dev-name"
                         >
-                            Lautaro Leal
+                            {DEVELOPER_INFO.name}
                         </a>
                     </div>
 
