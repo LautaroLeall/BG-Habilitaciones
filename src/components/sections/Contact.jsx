@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, Instagram, User, Linkedin, MapPin } from "lucide-react";
+import { Phone, Mail, Instagram, User, Linkedin } from "lucide-react";
+import { CONTACT_INFO } from "../../constants/siteData";
 import "../../styles/Contact.css";
 
 const Contact = () => {
@@ -30,7 +31,7 @@ const Contact = () => {
                         <motion.a
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            href="https://wa.me/543813495974"
+                            href={CONTACT_INFO.whatsappUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-contact-primary px-10 py-5 font-bold flex items-center justify-center gap-3 text-sm tracking-widest uppercase cursor-pointer no-underline"
@@ -40,7 +41,7 @@ const Contact = () => {
 
                         <motion.a
                             whileTap={{ scale: 0.95 }}
-                            href="mailto:gychabilitaciones@gmail.com"
+                            href={CONTACT_INFO.emailUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-contact-secondary px-10 py-5 font-bold flex items-center justify-center gap-3 text-sm tracking-widest uppercase cursor-pointer no-underline"
@@ -49,44 +50,33 @@ const Contact = () => {
                         </motion.a>
                     </div>
 
-                    <div className="md:text-center flex flex-col items-center md:items-center mt-10">
-                        <a
-                            href="https://maps.app.goo.gl/t5cW4ac5QK65h1H3A"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 hover:text-white transition-colors w-fit text-sm"
-                        >
-                            <div className="p-5 rounded-full bg-white/5 flex items-center gap-2 link-location">
-                                <MapPin size={18} className="text-white md:text-sm md:w-fit" />
-                                <span>Corrientes 816, San Miguel de Tucumán</span>
-                            </div>
-                        </a>
-                    </div>
-
                     {/* Información de Contacto y Redes */}
-                    <div className="mt-10 pt-10 border-t border-white/10 text-s text-gray-400">
+                    <div className="mt-10 pt-10 border-t border-white/10 text-sm text-gray-400">
                         {/* Columna: Redes Sociales */}
                         <div className="space-y-4 md:text-center flex flex-col items-center md:items-center">
                             <a
-                                href="https://www.instagram.com/_joven_emprendedor?igsh=aXhyem9kMXBxMm5h"
+                                href={CONTACT_INFO.instagramPersonal.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 hover:text-white transition-colors w-fit">
-                                <User size={18} /> @_joven_emprendedor
+                                className="flex items-center gap-2 hover:text-white transition-colors w-fit"
+                            >
+                                <User size={18} /> {CONTACT_INFO.instagramPersonal.handle}
                             </a>
                             <a
-                                href="https://www.instagram.com/bg.habilitaciones?igsh=MTYzNGhlMjdwam56MA=="
+                                href={CONTACT_INFO.instagramBusiness.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 hover:text-white transition-colors w-fit">
-                                <Instagram size={18} /> @bg.habilitaciones
+                                className="flex items-center gap-2 hover:text-white transition-colors w-fit"
+                            >
+                                <Instagram size={18} /> {CONTACT_INFO.instagramBusiness.handle}
                             </a>
                             <a
-                                href="https://www.linkedin.com/in/benjamingonzalez-?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                href={CONTACT_INFO.linkedin.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 hover:text-white transition-colors w-fit">
-                                <Linkedin size={18} /> Benjamín Gonzalez
+                                className="flex items-center gap-2 hover:text-white transition-colors w-fit"
+                            >
+                                <Linkedin size={18} /> {CONTACT_INFO.linkedin.name}
                             </a>
                         </div>
                     </div>
